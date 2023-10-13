@@ -1,1 +1,27 @@
-Teste 123
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chamada de endpoint</title>
+</head>
+<body>
+    <h1>Chamada de endpoint</h1>
+
+    <script>
+        const endpoint = "https://api.example.com/v1/users";
+
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", endpoint);
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                const response = JSON.parse(xhr.responseText);
+
+                console.log(response);
+            } else {
+                console.log("Erro: " + xhr.status);
+            }
+        };
+        xhr.send();
+    </script>
+</body>
+</html>
